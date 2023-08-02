@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>{{ user.full_name }}</p>
+    <p>{{ user.email }}</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-info" type="submit" value="Change">
+    </form>
+{% endblock %}
